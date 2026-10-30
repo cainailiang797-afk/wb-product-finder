@@ -1,0 +1,16 @@
+{
+  "name": "wb-product-finder",
+  "version": "0.1.0",
+  "description": "Wildberries 选品工具（独立版，Phase 1 选品本体）",
+  "main": "src/index.js",
+  "scripts": {
+    "probe": "node scripts/probe.js",
+    "collect": "node scripts/collect.js",
+    "deepscore": "node scripts/deepscore.js",
+    "filter": "node scripts/filter.js",
+    "report": "node scripts/report.js"
+  },
+  "dependencies": {
+    "playwright": "^1.48.0"
+  }
+}
