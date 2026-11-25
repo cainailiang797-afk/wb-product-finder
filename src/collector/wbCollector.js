@@ -2,7 +2,8 @@
  * WB 市场商品采集客户端（Playwright + CDP）
  *
  * 采集模式（借鉴 Ozon marketApiClient 的反爬方案）：
- *  1. CDP 模式（推荐）：连接用户已打开的 Chrome（--remote-debugging-port=9222）
+ *  1. CDP 模式（推荐）：连接用户已打开的 Chrome（默认 --remote-debugging-port=9222）
+ *     Ozon 工具占 9223（独立 profile），两个 Chrome 可同时运行；可用环境变量 WB_CDP_PORT 覆盖本工具端口
  *  2. 直连模式（备用，易被反爬）
  *
  * ⚠️ 诚实声明：WB 搜索页/商品卡的 DOM 结构与字段（价格/评论/品牌/卖家）尚未实测，
@@ -18,15 +19,8 @@ try {
 }
 
 const http = require('http');
-const fs = require('fs');
 
-// 系统 Chrome 候选路径（用于直连 fallback，避免依赖 playwright 下载的浏览器，也避免 CDP 端口被本机多实例转发导致的端口丢失）
-const CHROME_CANDIDATES = [
-  'C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe',
-  'C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe',
-  process.env.LOCALAPPDATA + '\\Google\\Chrome\\Application\\chrome.exe'
-];
-const SYSTEM_CHROME = CHROME_CANDIDATES.find((p) => p && fs.existsSync(p)) || null;
+// 约定：Chrome 一律由用户手动启动，采集器只接管已存在的调试端口，绝不自行拉起浏览器
 
 // 🆕 药品/保健品排除正则（沿用 Ozon 工具的既定决策：不采药品）
 const MEDICINE_RE = /лекарств|таблетк|капсул|витамин|антибиотик|препарат|бад\b|ветеринар|антигельминт|антипаразит|противопаразит|дегельминт|суспензи|хондропротектор|кормовая добавка|биодобавк|пробиотик|омега[- ]?3|лососевое масло|рыбий жир|инъекц|шприц|пипетк|капли|от блох|от клещ|от паразит|от гельминт/i;
@@ -36,11 +30,15 @@ class WbMarketApiClient {
     this.options = {
       timeout: options.timeout || 45000,
       maxProducts: options.maxProducts || 30,
-      cdpPort: options.cdpPort || 9222,
+      cdpPort: options.cdpPort || Number(process.env.WB_CDP_PORT) || 9222,
       cdpHost: options.cdpHost || '127.0.0.1',
       useCDP: options.useCDP !== false,
       // WB 搜索页 URL 模板（Phase 1：参数 search= 待探测确认）
       searchUrl: options.searchUrl || 'https://www.wildberries.ru/catalog/0/search.aspx?search=',
+      // 排序参数：pricedown=价格从高到低（用于定向抓高客单款），默认沿用 WB 热度排序
+      sort: options.sort != null ? options.sort : (process.env.WB_SORT || ''),
+      // 价格区间过滤，WB 单位为「分」（120000 = ₽1200），格式 "120000;400000"
+      priceU: options.priceU != null ? options.priceU : (process.env.WB_PRICE_U || ''),
       priceMin: options.priceMin != null ? options.priceMin : 150,
       priceMax: options.priceMax != null ? options.priceMax : 10000
     };
@@ -97,15 +95,13 @@ class WbMarketApiClient {
       }
     }
 
-    if (!SYSTEM_CHROME) {
-      throw new Error('未找到系统 Chrome，且 CDP 端口不可达。请手动用带 --remote-debugging-port=9222 的 Chrome 打开 wildberries.ru');
-    }
-    console.log('[WbAPI] 使用系统 Chrome 启动（executablePath 直连）...');
-    this.browser = await playwright.chromium.launch({
-      headless: false,
-      executablePath: SYSTEM_CHROME,
-      args: ['--no-sandbox', '--disable-dev-shm-usage', '--disable-gpu', '--no-first-run', '--no-default-browser-check']
-    });
+    // 不自动启动 Chrome：调试端口不可达时直接报错，由用户手动打开浏览器后再采集
+    throw new Error(
+      `无法连接 Chrome 调试端口 ${this.options.cdpHost}:${this.options.cdpPort}。\n` +
+      '请先手动打开 Chrome（不要用自动化脚本启动）：\n' +
+      `"C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe" --remote-debugging-port=${this.options.cdpPort} --user-data-dir="C:\\wb-debug-profile" "https://www.wildberries.ru/"\n` +
+      '打开后确认端口可用，再重新运行采集。'
+    );
   }
 
   async _getPage() {
@@ -139,7 +135,9 @@ class WbMarketApiClient {
     const page = await this._getPage();
     page.setDefaultTimeout(this.options.timeout);
 
-    const url = this.options.searchUrl + encodeURIComponent(keyword);
+    const url = this.options.searchUrl + encodeURIComponent(keyword)
+      + (this.options.priceU ? `&priceU=${encodeURIComponent(this.options.priceU)}` : '')
+      + (this.options.sort ? `&sort=${this.options.sort}` : '');
     // 真实市场供给量：WB 搜索页自身的内部接口（__internal/u-search）会返回该词的搜索结果总数，
     // 直接 fetch 会被 403，只能监听页面自身响应抓取（resultset=filters 那条）
     let marketSupply = 0;
@@ -250,8 +248,15 @@ class WbMarketApiClient {
 
       let rating = 0, reviews = 0;
       if (info.ratingText) {
-        const r = info.ratingText.match(/(\d+)[.,](\d+)/);
-        if (r) rating = parseFloat(r[1] + '.' + r[2]);
+        // WB 有两种文案："4,9· 46 оценок" 和 "5· 11 оценок"（满分为整数，无小数点）
+        // 先剥掉评价数段，避免把 11 当成评分
+        const head = info.ratingText.replace(/[·•]\s*[\d\s\u00A0]+\s*оцен\S*/i, '').trim();
+        const dec = head.match(/(\d+)[.,](\d+)/);
+        if (dec) rating = parseFloat(dec[1] + '.' + dec[2]);
+        else {
+          const int = head.match(/(?:^|\s)([1-5])(?:\s|$)/);
+          if (int) rating = parseFloat(int[1]);
+        }
         const rc = info.ratingText.match(/([\d\s\u00A0]+)\s*оцен/i);
         if (rc) reviews = parseInt(rc[1].replace(/[\s\u00A0]/g, ''), 10) || 0;
       }

@@ -5,7 +5,7 @@
  *      为 wbCollector._parseCards 提供准确选择器（避免硬编码猜测）。
  *
  * 前置：用带调试端口的 Chrome 打开任意 wildberries.ru 页面：
- *   chrome.exe --remote-debugging-port=9222 --user-data-dir="C:\chrome-debug-profile" https://www.wildberries.ru
+ *   chrome.exe --remote-debugging-port=9222 --user-data-dir="C:\wb-debug-profile" https://www.wildberries.ru
  */
 const { WbMarketApiClient } = require('../src/collector/wbCollector');
 

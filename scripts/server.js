@@ -13,7 +13,8 @@ const { normalize1688Data, saveToProduct } = require('../src/api/ali1688Import')
 const { computePricing } = require('../src/api/wbPricing');
 const { buildDraft, submit, setPrice, setStock, getToken, PUBLISH_DEFAULTS } = require('../src/api/wbPublish');
 
-const PORT = Number(process.env.PORT) || 8901;
+// 固定 8901；不用通用 PORT 变量，避免被其它工具的环境变量（如 PORT=3000）顶掉
+const PORT = Number(process.env.WB_PORT) || 8901;
 const HTML_PATH = path.join(__dirname, '..', 'WB商品列表.html');
 
 const db = new WbDatabase().init();

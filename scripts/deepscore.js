@@ -24,6 +24,12 @@ const LIMIT = (() => {
   const i = argv.indexOf('--limit');
   return i >= 0 ? parseInt(argv[i + 1], 10) || 0 : 0;
 })();
+// 只回填指定采集批次：--task 19 或 --task 19,20,21（采集脚本自动串联时用，避免全库扫描）
+const TASKS = (() => {
+  const i = argv.indexOf('--task');
+  if (i < 0) return [];
+  return String(argv[i + 1] || '').split(',').map((s) => parseInt(s, 10)).filter((n) => n > 0);
+})();
 
 const CONCURRENCY = 4;
 const db = new WbDatabase().init();
@@ -178,14 +184,20 @@ function phaseScores() {
   const conds = ['wb_nm_id > 0'];
   if (!FORCE) conds.push("review_checked_at = ''");
   if (KEPT) conds.push('excluded = 0');
+  const params = [];
+  if (TASKS.length) {
+    conds.push(`collect_task_id IN (${TASKS.map(() => '?').join(',')})`);
+    params.push(...TASKS);
+  }
   const all = db.db.prepare(`
     SELECT id, wb_nm_id FROM wb_market_products
     WHERE ${conds.join(' AND ')}
     ORDER BY review_count DESC
-  `).all();
+  `).all(...params);
   const rows = LIMIT ? all.slice(0, LIMIT) : all;
   console.log(`待抓评价商品 ${rows.length} 件（总库 ${all.length}）`);
-  if (rows.length) {
+  // --scores-only：只按已入库的评价重算六维（不重新抓评价，用于评分阶段中断后的补算）
+  if (rows.length && !argv.includes('--scores-only')) {
     await resolveBandsViaBrowser(rows).catch((e) => console.log('[主机] 浏览器解析跳过:', e.message));
     await phaseReviews(rows);
   }

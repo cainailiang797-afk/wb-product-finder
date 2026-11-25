@@ -48,10 +48,15 @@ async function main() {
     DEFAULT_PET_KEYWORDS.forEach((k) => ins.run(k.keyword, k.category, k.animalType));
   });
   tx();
-  const keywords = db.db.prepare(
-    'SELECT keyword, category FROM wb_keywords WHERE enabled=1 ORDER BY id'
-  ).all();
-  console.log(`启用词 ${keywords.length} 个，目标 ${target} 件`);
+  // 可按类目定向采集：WB_ONLY_CATEGORY=猫用品-抓板 时只跑该类目的词（不影响其它类目），支持逗号分隔多类目
+  const onlyCategory = (process.env.WB_ONLY_CATEGORY || '').split(',').map((s) => s.trim()).filter(Boolean);
+  // 可按指定词采集：WB_ONLY_KEYWORDS="词1,词2" 时只跑这些词（不受类目/排序影响）
+  const onlyKeywords = (process.env.WB_ONLY_KEYWORDS || '').split(',').map((s) => s.trim()).filter(Boolean);
+  const keywords = onlyCategory.length
+    ? db.db.prepare(`SELECT keyword, category FROM wb_keywords WHERE enabled=1 AND category IN (${onlyCategory.map(() => '?').join(',')}) ORDER BY id`).all(...onlyCategory)
+    : db.db.prepare('SELECT keyword, category FROM wb_keywords WHERE enabled=1 ORDER BY id').all();
+  const picked = onlyKeywords.length ? keywords.filter((k) => onlyKeywords.includes(k.keyword)) : keywords;
+  console.log(`启用词 ${picked.length} 个（词库共 ${keywords.length} 个），目标 ${target} 件`);
 
   const client = new WbMarketApiClient({});
   const scoring = new WbScoring();
@@ -76,7 +81,7 @@ async function main() {
     db.db.prepare('SELECT title, brand, seller_name FROM wb_market_products').all()
       .map((r) => dedupeKey(r.title, r.brand, r.seller_name)).filter(Boolean)
   );
-  for (const k of keywords) {
+  for (const k of picked) {
     if (inserted >= needAdd) break;
     // 已饱和词跳过：采再多也只会整词触发规则4（同词相似款>50）被排除，纯浪费
     const curCnt = db.db.prepare('SELECT COUNT(*) AS c FROM wb_market_products WHERE keyword = ?').get(k.keyword).c;

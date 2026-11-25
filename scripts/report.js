@@ -51,6 +51,8 @@ const data = rows.map(r => ({
   cardName: fitName(r.title, r.source_length, r.source_width, r.source_height),
   ship: r.shipping_cost || 0,
   sweight: r.source_weight || 0,
+  // 客单重比：每公斤客单价（₽/kg），用于判断运费占比是否划算；重量未补时为 0
+  ppk: (r.source_weight > 0 && r.price > 0) ? Math.round(r.price / (r.source_weight / 1000)) : 0,
   sixdim: r.sixdim_total || 0,
   conversion: r.conversion_score || 0,
   competition: r.competition_score || 0,
@@ -221,6 +223,7 @@ const html = `<!DOCTYPE html>
       <th></th>
       <th data-key="title">标题 <span class="arrow"></span></th>
       <th data-key="price" class="num">价格 <span class="arrow"></span></th>
+      <th data-key="ppk" class="num" title="每公斤客单价：≥1500 运费占比低，&lt;1000 运费吃掉利润">₽/kg <span class="arrow"></span></th>
       <th data-key="disc" class="num">折扣 <span class="arrow"></span></th>
       <th data-key="rating" class="num">评分 <span class="arrow"></span></th>
       <th data-key="reviews" class="num">评论数 <span class="arrow"></span></th>
@@ -342,6 +345,9 @@ const html = `<!DOCTYPE html>
         '<td class="t-img">' + img + '</td>' +
         '<td class="t-title"><a href="' + url + '" target="_blank" rel="noopener">' + d.title + '</a>' + brand + cardCopy + '</td>' +
         '<td class="num"><span class="price">₽' + d.price.toLocaleString('ru-RU') + '</span>' + (d.old > d.price ? '<span class="old">₽' + d.old.toLocaleString('ru-RU') + '</span>' : '') + '</td>' +
+        '<td class="num" title="' + (d.ppk > 0 ? '重量 ' + d.sweight + 'g，每公斤客单 ₽' + d.ppk : '重量未补，先粘贴 1688 货源') + '">' + (d.ppk > 0
+          ? '<b style="color:' + (d.ppk >= 1500 ? '#1a7f37' : d.ppk >= 1000 ? '#b26a00' : '#c62828') + '">₽' + d.ppk.toLocaleString('ru-RU') + '</b>'
+          : '<span class="reviews">待补重量</span>') + '</td>' +
         '<td class="num">' + disc + '</td>' +
         '<td class="num"><span class="rating">' + (d.rating ? d.rating.toFixed(1) : '—') + '</span></td>' +
         '<td class="num"><span class="reviews">' + d.reviews.toLocaleString('ru-RU') + '</span></td>' +
@@ -433,6 +439,7 @@ const html = `<!DOCTYPE html>
         const item = DATA.find(d => String(d.id) === String(curId));
         if (item) {
           item.cost = n.total; item.sweight = n.weight;
+          item.ppk = (n.weight > 0 && item.price > 0) ? Math.round(item.price / (n.weight / 1000)) : 0;
           if (p.ok) { item.headLeg = p.headLegCny; item.channel = p.channel; item.sug = p.suggestPriceRub; item.margin = p.margin; }
         }
         render();

@@ -17,7 +17,98 @@ const MARKET_HOST = 'https://marketplace-api.wildberries.ru';
 // 发布后自动补价格/库存的默认值（郑州仓库，库存 99；折扣前价 = 折后价 × 1.3，即 23% 折扣）
 const PUBLISH_DEFAULTS = { warehouseId: 2307282, stock: 99, discount: 23, markup: 1.3 };
 const TOKEN_FILE = path.join(__dirname, '..', '..', 'data', 'wb_api_token.txt');
-const SUBJECT_ID = 731; // Игрушки для животных（猫用品/玩具类目）
+const SUBJECT_ID = 731; // 兜底类目：Игрушки для животных
+
+// ---------- 类目（subjectID）映射 ----------
+// 所有 subjectID 均经 /content/v2/object/all 实测确认；判定顺序：俄文标题 → 中文标题 → 采集类目
+const SUBJECT_RULES = [
+  [/коврик для лотк/i, 2911],                                  // Коврики для лотков
+  [/коврик под миск/i, 3241],                                  // Коврики под миску
+  [/намордник/i, 1007],                                        // Намордники для животных
+  [/шлейк|шлея/i, 730],                                        // Шлейки
+  [/поводок|рулетк/i, 729],                                    // Поводки
+  [/ошейник/i, 728],                                           // Ошейники
+  [/пеленк/i, 932],                                            // Пеленки для животных
+  [/комбинезон|костюм|куртк|платье|свитер|футболк|жилет|ботинк|носочк|шапк|дождевик/i, 735], // Комбинезоны
+  [/переноск|рюкзак|сумка/i, 726],                             // Переноски для животных
+  [/вольер|клетк|манеж|загон/i, 3318],                         // Вольеры
+  [/лоток|туалет/i, 1125],                                     // Лотки для животных
+  [/поилк|фонтан/i, 3235],                                     // Поилки для животных
+  [/миск|чашк/i, 1126],                                        // Миски для животных
+  [/кормушк/i, 1121],                                          // Кормушки для животных
+  [/когтеточк|столбик для когтей|точилк/i, 874],               // Когтеточки
+  [/домик/i, 942],                                             // Домики для животных
+  [/лежанк|диван|кровать|пуф|кресл|матрас|гамак|бассейн|подстилк/i, 941], // Лежаки для животных
+  [/когтерез/i, 1071],                                         // Когтерезки
+  [/груминг|набор.*уход/i, 4626],                              // Наборы для груминга
+  [/фурминатор|пуходерк|расческ|щетк|щётк|колтунорез|перчатк|рукавиц/i, 3480], // Расчески для животных
+  [/игрушк|мяч|мышк|дразнилк|удочк|лазер|тоннель|канат/i, 731], // Игрушки для животных
+];
+
+// 中文标题兜底（采集商品的原始 1688 标题）
+const CN_SUBJECT_RULES = [
+  [/猫砂盆|猫厕所|砂盆|尿垫托|便盆/, 1125],
+  [/猫抓板|抓柱|磨爪|猫爬架/, 874],
+  [/牵引|胸背|项圈|嘴套|脖圈/, 728],
+  [/猫包|背包|外出包|航空箱|推车|手提包/, 726],
+  [/衣服|服装|雨衣|马甲|卫衣|棉衣/, 735],
+  [/围栏|笼子|笼具|产房/, 3318],
+  [/梳|刷|剪刀|指甲钳|剃毛|去毛|浮毛/, 3480],
+  [/碗|食盆|餐台|饮水|水盆/, 1126],
+  [/窝|垫|床|沙发|躺椅|睡垫/, 941],
+  [/玩具|逗猫|球|老鼠|抓球/, 731],
+];
+
+// 采集类目兜底
+const CATEGORY_SUBJECT = {
+  '猫用品-抓板': 874, '狗用品-抓板': 874,
+  '猫用品-玩具': 731, '狗用品-玩具': 731,
+  '猫用品-窝': 941, '狗用品-窝': 941, '猫用品-沙发': 941,
+  '猫用品-餐具': 1126, '狗用品-餐具': 1126,
+  '猫用品-清洁': 1125, '宠物-厕所': 1125,
+  '宠物-喂食器': 1121, '宠物-饮水': 3235,
+  '猫用品-出行': 726, '狗用品-出行': 726,
+  '狗用品-服饰': 735,
+  '狗用品-项圈': 728,
+  '宠物-笼具': 3318,
+  '猫用品-护理': 3480, '狗用品-美容': 3480,
+};
+
+function resolveSubject(ruTitle, category, cnTitle) {
+  const ru = String(ruTitle || '');
+  for (const [re, sid] of SUBJECT_RULES) if (re.test(ru)) return sid;
+  const cn = String(cnTitle || '');
+  for (const [re, sid] of CN_SUBJECT_RULES) if (re.test(cn)) return sid;
+  return CATEGORY_SUBJECT[category] || SUBJECT_ID;
+}
+
+// ---------- 各 subject 合法特性缓存（scripts/fetch_subject_chars.js 生成） ----------
+let SUBJECT_CHARS = null;
+function loadSubjectChars() {
+  if (SUBJECT_CHARS) return SUBJECT_CHARS;
+  try {
+    SUBJECT_CHARS = JSON.parse(fs.readFileSync(path.join(__dirname, '..', '..', 'data', 'wb_subject_chars.json'), 'utf8'));
+  } catch (e) {
+    SUBJECT_CHARS = {};
+  }
+  return SUBJECT_CHARS;
+}
+
+// 过滤掉该 subject 不支持的字段（如把「Вид игрушки」塞进猫砂盆类目会导致无效字段）
+function filterChars(chars, subjectID) {
+  const allowed = loadSubjectChars()[subjectID];
+  if (!allowed || !allowed.length) return chars;
+  const ids = new Set(allowed.map((c) => c.id));
+  return chars.filter((c) => ids.has(c.id));
+}
+
+// 尺寸量纲归一：1688 常把 mm 写成「345」这类值，最大边 ≥200 视为毫米，统一转 cm
+function normalizeDims(length, width, height) {
+  const arr = [Number(length) || 0, Number(width) || 0, Number(height) || 0];
+  const max = Math.max(...arr);
+  const converted = max >= 200 ? arr.map((x) => x / 10) : arr;
+  return converted.map((x) => Math.round(x * 10) / 10);
+}
 
 // ---------- 中文 → 俄文 词库（猫用品垂直品类） ----------
 const CN_RU = [
@@ -25,10 +116,18 @@ const CN_RU = [
   ['复古', 'Ретро'], ['白色', 'белый'], ['黑色', 'черный'], ['蓝色', 'синий'],
   ['粉色', 'розовый'], ['绿色', 'зеленый'], ['红色', 'красный'], ['黄色', 'желтый'],
   ['灰色', 'серый'], ['棕色', 'коричневый'], ['米色', 'бежевый'], ['紫色', 'фиолетовый'],
-  // 材质
+  ['橙色', 'оранжевый'], ['橘色', 'оранжевый'], ['咖啡色', 'коричневый'], ['米白', 'бежевый'],
+  ['藏青', 'синий'], ['天蓝', 'голубой'], ['湖蓝', 'бирюзовый'], ['酒红', 'красный'],
+  ['墨绿', 'зеленый'], ['豹纹', 'коричневый'],
+  // 材质（1688「材质/材料/手柄材质/顶部装饰材质」等字段与标题都会扫）
   ['瓦楞纸', 'Гофрокартон'], ['硬纸板', 'Картон'], ['纸质', 'Бумага'], ['剑麻', 'Сизаль'],
-  ['毛绒', 'Плюш'], ['硅胶', 'Силикон'], ['塑料', 'Пластик'], ['木材', 'Дерево'],
+  ['毛绒', 'Плюш'], ['珊瑚绒', 'Плюш'], ['摇粒绒', 'Плюш'], ['天鹅绒', 'Велюр'],
+  ['硅胶', 'Силикон'], ['塑料', 'Пластик'], ['木材', 'Дерево'], ['实木', 'Дерево'], ['松木', 'Дерево'],
   ['棉', 'Хлопок'], ['皮革', 'Экокожа'], ['生态皮革', 'Экокожа'], ['麻绳', 'Джут'],
+  ['不锈钢', 'Нержавеющая сталь'], ['金属', 'Металл'], ['合金', 'Металл'], ['铁', 'Металл'], ['铝', 'Алюминий'],
+  ['尼龙', 'Нейлон'], ['涤纶', 'Полиэстер'], ['牛津布', 'Оксфорд'], ['帆布', 'Холст'],
+  ['亚克力', 'Акрил'], ['橡胶', 'Резина'], ['乳胶', 'Латекс'], ['陶瓷', 'Керамика'], ['玻璃', 'Стекло'],
+  ['海绵', 'Поролон'], ['藤', 'Ротанг'], ['竹', 'Бамбук'], ['羽毛', 'Перо'], ['冰丝', 'Вискоза'],
   // 动物/对象
   ['猫', 'Кошка'], ['小猫', 'Котёнок'], ['猫咪', 'Кошка'], ['狗', 'Собака'], ['宠物', 'Питомец'],
   // 玩具类型
@@ -75,12 +174,62 @@ function extractColor(attrs, cnTitle) {
   return fromTitle || 'белый';
 }
 
-// 从 1688 属性/标题提取材质
+// 材质词白名单（用于从 1688 字段里过滤，避免把颜色/动物等词混进材质）
+const MATERIAL_RU = new Set([
+  'Гофрокартон', 'Картон', 'Бумага', 'Сизаль', 'Плюш', 'Велюр', 'Силикон', 'Пластик', 'Дерево',
+  'Хлопок', 'Экокожа', 'Джут', 'Нержавеющая сталь', 'Металл', 'Алюминий', 'Нейлон', 'Полиэстер',
+  'Оксфорд', 'Холст', 'Акрил', 'Резина', 'Латекс', 'Керамика', 'Стекло', 'Поролон', 'Ротанг',
+  'Бамбук', 'Перо', 'Вискоза', 'ABS',
+]);
+
+// 拉丁文材质缩写（1688 常直接写 ABS/PP/PC/PVC 等）
+const LATIN_MATERIALS = [
+  [/\bABS\b/i, 'ABS'],
+  [/\bPP\b/i, 'ПП'],
+  [/\bPC\b/i, 'ПК'],
+  [/\bPVC\b/i, 'ПВХ'],
+  [/\bTPR\b/i, 'ТПР'],
+  [/\bTPE\b/i, 'ТПЭ'],
+  [/\bEVA\b/i, 'EVA'],
+  [/\bPET\b/i, 'ПЭТ'],
+];
+
+// 从 1688 属性/标题提取材质（返回多个标签：如 ['ABS', 'Нержавеющая сталь']）
 function extractMaterial(attrs, cnTitle) {
-  const src = String(pickAttr(attrs, '材质') || pickAttr(attrs, '材料') || cnTitle);
-  const hits = translateCn(src).filter((w) =>
-    ['Гофрокартон', 'Картон', 'Бумага', 'Сизаль', 'Плюш', 'Силикон', 'Пластик', 'Дерево', 'Хлопок', 'Экокожа', 'Джут'].includes(w));
-  return hits.length ? hits.join(', ') : 'Гофрокартон';
+  const tags = [];
+  const push = (ru) => { if (ru && !tags.includes(ru)) tags.push(ru); };
+
+  // 1) 扫所有带「材质/材料」的属性字段（含「手柄材质」「顶部装饰材质」这类子字段）
+  const parts = [];
+  for (const [k, v] of Object.entries(attrs || {})) {
+    if (/材质|材料/.test(k)) parts.push(String(v));
+  }
+  // 2) 兜底把标题和其余属性也扫一遍（很多 1688 货源只把材质写在标题/规格里）
+  parts.push(String(cnTitle || ''));
+  for (const v of Object.values(attrs || {})) parts.push(String(v));
+
+  for (const text of parts) {
+    // 中文材质词
+    for (const { cn, ru } of CN_RU) {
+      if (MATERIAL_RU.has(ru) && text.includes(cn)) push(ru);
+    }
+    // 拉丁材质缩写
+    for (const [re, ru] of LATIN_MATERIALS) {
+      if (re.test(text)) push(ru);
+    }
+  }
+
+  // 3) 1688 完全没有材质信息时，按商品类型兜底（不再统一写死瓦楞纸）
+  if (!tags.length) {
+    const t = String(cnTitle || '');
+    if (/猫砂盆|猫厕所|砂盆|厕所/.test(t)) push('ABS');
+    else if (/抓板|抓柱|磨爪|瓦楞/.test(t)) push('Гофрокартон');
+    else if (/碗|餐台|喂食器|饮水/.test(t)) push('Пластик');
+    else if (/尿垫|导尿|隔尿/.test(t)) push('Силикон');
+    else if (/窝|垫|床|沙发|躺/.test(t)) push('Плюш');
+    else push('Пластик');
+  }
+  return tags.slice(0, 4);
 }
 
 // HS 编码（ТН ВЭД）：只能从类目 731 的合法编码列表里选，按材质匹配，兜底塑料制品
@@ -231,30 +380,65 @@ function buildDraft(db, nmId) {
   if (specs.length === 0) {
     specs.push({ name: '', length: row.source_length || 0, width: row.source_width || 0, height: row.source_height || 0, weight: row.source_weight || 0 });
   }
-  // WB 宠物玩具类目(731)无「尺寸规格」变体维度，大/中/小无法合并成一张卡 → 只发体积最大的「大号」
+  // 量纲归一：避免 1688 的毫米值（345）被当成 345 cm 发出去
+  specs = specs.map((s) => {
+    const [L, W, H] = normalizeDims(s.length, s.width, s.height);
+    return { ...s, length: L, width: W, height: H };
+  });
+  // WB 各宠物类目无「尺寸规格」变体维度，大/中/小无法合并成一张卡 → 只发体积最大的「大号」
   specs.sort((a, b) => (b.length * b.width * b.height) - (a.length * a.width * a.height));
   specs = [specs[0]];
 
-  const material = extractMaterial(attrs, cnTitle);
+  const materialTags = extractMaterial(attrs, cnTitle);
   // HS 编码（跨境清关必填，UI 上的「填写 HS」提示），按材质选择合法编码
-  const tnved = pickTnved(material);
+  const tnved = pickTnved(materialTags.join(', '));
   const toyType = detectToyType(cnTitle);
-  const animalType = translateCn(cnTitle).includes('Кошка') || translateCn(cnTitle).includes('Котёнок') ? 'Кошка' : 'Кошка';
+  // 动物类型按 1688 标题判定，没有中文标题时看俄文标题（狗用品不再一律写「Кошка」）
+  const animalType = /狗|犬/.test(cnTitle) || /собак/i.test(ruTitle) ? 'Собака' : 'Кошка';
+  const animalGenitive = animalType === 'Собака' ? 'собак' : 'кошек';
+  // 类目按「俄文标题 → 中文标题 → 采集类目」判定，不再一律挂到 731 玩具
+  const subjectID = resolveSubject(ruTitle, row.category, cnTitle);
 
   // 标题：把尺寸归一到 1688 实测值（只发大号，单变体）
   const commonTitle = normalizeSizeInTitle(ruTitle, specs[0].length, specs[0].width, specs[0].height);
   // 卡名单独生成：WB 名称字段上限 60 字符，超长会被平台拒绝
   const cardName = fitName(ruTitle, specs[0].length, specs[0].width, specs[0].height);
 
-  const purpose = toyType === 'Когтеточка' || toyType === 'Когтеточка-столбик'
-    ? ['Точить когти, отдых кошки'] : ['Активная игра для кошки'];
-  const features = (toyType === 'Когтеточка' || toyType === 'Когтеточка-столбик')
-    ? [toyType + ' 2 в 1, защита мебели'] : [toyType + ' для кошек'];
+  // 「Назначение игрушки」(125575) 只有玩具类目支持，其余类目交给 filterChars 过滤
+  const isToySubject = subjectID === 731 || subjectID === 874;
+  const purpose = subjectID === 874
+    ? ['Точить когти, отдых ' + animalGenitive]
+    : (subjectID === 731 ? ['Активная игра для ' + animalGenitive] : []);
+
+  // 「Особенности товара для животных」(115027) 按类目给出贴合的描述，避免所有卡都写「玩具」
+  const SUBJECT_FEATURES = {
+    1125: 'Туалет для ' + animalGenitive + ', легко мыть',
+    1126: 'Кормление, для воды и корма',
+    1121: 'Кормление, для сухого корма',
+    3235: 'Питье, для воды',
+    941: 'Отдых и сон, мягкая лежанка',
+    942: 'Отдых и сон, закрытый домик',
+    726: 'Перевозка ' + animalGenitive,
+    728: 'Прогулка и дрессировка',
+    729: 'Прогулка и дрессировка',
+    730: 'Прогулка и дрессировка',
+    735: 'Защита от холода, одежда для ' + animalGenitive,
+    3318: 'Содержание, вольер для ' + animalGenitive,
+    1007: 'Дрессировка, намордник',
+    932: 'Гигиена, впитывающие пеленки',
+    3480: 'Уход за шерстью',
+    1071: 'Уход за когтями',
+    4626: 'Груминг и уход',
+    2911: 'Гигиена, коврик для лотка',
+    3241: 'Защита пола под миску',
+  };
+  const features = [SUBJECT_FEATURES[subjectID] || purpose[0] || (toyType + ' для ' + animalGenitive)];
   const kit = translateCn(cnTitle).includes('Набор') ? [commonTitle + ', в наборе'] : [commonTitle];
 
-  // 描述：单变体单行尺寸/重量
+  // 描述：单变体单行尺寸/重量（玩具类写玩法，其余写用途，避免猫砂盆被描述成玩具）
   const descBase = [
-    'Товар для кошек, безопасный материал, подходит для активной игры и отдыха питомца.',
+    'Товар для ' + animalGenitive + ', безопасный материал, '
+      + (isToySubject ? 'подходит для активной игры и отдыха питомца.' : 'удобен в ежедневном использовании.'),
   ];
   const descSize = [
     'Размер: ' + fmtNum(specs[0].length) + '×' + fmtNum(specs[0].width) + '×' + fmtNum(specs[0].height) + ' см, вес: ' + (specs[0].weight / 1000).toFixed(2) + ' кг.'
@@ -271,31 +455,33 @@ function buildDraft(db, nmId) {
   const singleColor = extractColor(attrs, cnTitle);
 
   const variants = specs.map((s, i) => {
-    const L = Math.round(s.length) || 0;
-    const W = Math.round(s.width) || 0;
-    const H = Math.round(s.height) || 0;
+    const L = Math.round(s.length * 10) / 10 || 0;
+    const W = Math.round(s.width * 10) / 10 || 0;
+    const H = Math.round(s.height * 10) / 10 || 0;
     const WT = Math.round(s.weight) || 0;
     const vColor = singleColor;
 
-    const characteristics = [
+    // 只保留当前类目支持的字段（252454 Вид грызуна 仅鼠类适用，不再写入）
+    const characteristics = filterChars([
       { id: 89008, value: WT },                                    // Вес товара без упаковки (г)
       { id: 90673, value: W },                                     // Ширина предмета (см)
       { id: 90652, value: L },                                     // Глубина предмета (см)
       { id: 90630, value: H },                                     // Высота предмета (см)
       { id: 14177449, value: [vColor] },                           // Цвет（多变体时作规格区分）
       { id: 12285, value: [animalType] },                          // Вид животного
-      { id: 252454, value: [animalType] },                         // Вид грызуна
-      { id: 125045, value: [toyType] },                            // Вид игрушки
-      { id: 17596, value: [material] },                            // Материал изделия
-      { id: 14177451, value: ['中国'] },                           // Страна производства
+      { id: 125045, value: [toyType] },                            // Вид игрушки（仅玩具类目）
+      { id: 17596, value: materialTags },                          // Материал изделия（多个标签按 1688 数据分开填）
+      { id: 14177451, value: ['Китай'] },                          // Страна производства
       { id: 15001405, value: ['20'] },                             // Ставка НДС
+      // 品名：玩具类目用 15003169「Полное наименование」，多数非玩具类目只认 15000000「Наименование」
+      { id: 15000000, value: [commonTitle] },
       { id: 15003169, value: [commonTitle] },                      // Полное наименование
       { id: 15000001, value: [tnved] },                            // ТНВЭД（HS 编码）
       { id: 15004139, value: [tnved] },                            // Код ТН ВЭД（跨境 HS 字段）
       { id: 378533, value: kit },                                  // Комплектация
-      { id: 125575, value: purpose },                              // Назначение
+      { id: 125575, value: purpose },                              // Назначение（仅玩具类目）
       { id: 115027, value: features },                             // Особенности
-    ];
+    ].filter((c) => !Array.isArray(c.value) || c.value.length > 0), subjectID);
 
     return {
       vendorCode: 'wb-' + nmId + '-' + (i + 1) + '-' + Date.now().toString().slice(-6),
@@ -317,7 +503,7 @@ function buildDraft(db, nmId) {
   });
 
   const draft = {
-    subjectID: SUBJECT_ID,
+    subjectID: subjectID,
     brand: '',
     currencyIsoCode4217: 'RUB',
     // 顶层保留通用字段供前端预览展示；真正提交走 variants
@@ -503,4 +689,5 @@ async function submit(draft, options) {
 module.exports = {
   buildDraft, submit, getToken, translateCn, fitName, stripSize, normalizeSizeInTitle,
   findCardByVendorCode, attachImages, setPrice, setStock, PUBLISH_DEFAULTS, HOST, SUBJECT_ID,
+  resolveSubject, filterChars, loadSubjectChars, normalizeDims,
 };

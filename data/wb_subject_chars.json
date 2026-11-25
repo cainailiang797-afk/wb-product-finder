@@ -1,0 +1,3862 @@
+{
+  "726": [
+    {
+      "id": 12,
+      "name": "Рисунок",
+      "required": false
+    },
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 19234,
+      "name": "Размер животного",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 89008,
+      "name": "Вес товара без упаковки (г)",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 111004,
+      "name": "Весовая группа животного",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 252454,
+      "name": "Вид грызуна",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 424366,
+      "name": "Размер переноски для животных",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177450,
+      "name": "Состав",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003150,
+      "name": "Вид переноски",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "728": [
+    {
+      "id": 4,
+      "name": "Вид застежки",
+      "required": false
+    },
+    {
+      "id": 5556,
+      "name": "Питание",
+      "required": false
+    },
+    {
+      "id": 8606,
+      "name": "Типоразмер элемента питания",
+      "required": false
+    },
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 19234,
+      "name": "Размер животного",
+      "required": false
+    },
+    {
+      "id": 54337,
+      "name": "Размер",
+      "required": false
+    },
+    {
+      "id": 85571,
+      "name": "Упаковка",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 90673,
+      "name": "Ширина предмета",
+      "required": false
+    },
+    {
+      "id": 90675,
+      "name": "Длина предмета",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 90917,
+      "name": "Вид ошейника",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 125120,
+      "name": "Порода собаки",
+      "required": false
+    },
+    {
+      "id": 125584,
+      "name": "Назначение амуниции для животных",
+      "required": false
+    },
+    {
+      "id": 252454,
+      "name": "Вид грызуна",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 14177456,
+      "name": "Рос. размер",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003169,
+      "name": "Полное наименование товара",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003308,
+      "name": "Тип доставки",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "729": [
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 19234,
+      "name": "Размер животного",
+      "required": false
+    },
+    {
+      "id": 85571,
+      "name": "Упаковка",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 90673,
+      "name": "Ширина предмета",
+      "required": false
+    },
+    {
+      "id": 90675,
+      "name": "Длина предмета",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 111004,
+      "name": "Весовая группа животного",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 125027,
+      "name": "Вид поводка",
+      "required": false
+    },
+    {
+      "id": 125584,
+      "name": "Назначение амуниции для животных",
+      "required": false
+    },
+    {
+      "id": 252454,
+      "name": "Вид грызуна",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003169,
+      "name": "Полное наименование товара",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003308,
+      "name": "Тип доставки",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "730": [
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 19234,
+      "name": "Размер животного",
+      "required": false
+    },
+    {
+      "id": 54337,
+      "name": "Размер",
+      "required": false
+    },
+    {
+      "id": 85571,
+      "name": "Упаковка",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 111004,
+      "name": "Весовая группа животного",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 125072,
+      "name": "Вид шлейки",
+      "required": false
+    },
+    {
+      "id": 252454,
+      "name": "Вид грызуна",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 14177456,
+      "name": "Рос. размер",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003169,
+      "name": "Полное наименование товара",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003308,
+      "name": "Тип доставки",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "731": [
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 89008,
+      "name": "Вес товара без упаковки (г)",
+      "required": false
+    },
+    {
+      "id": 90630,
+      "name": "Высота предмета",
+      "required": false
+    },
+    {
+      "id": 90652,
+      "name": "Глубина предмета",
+      "required": false
+    },
+    {
+      "id": 90673,
+      "name": "Ширина предмета",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 125045,
+      "name": "Вид игрушки для животных",
+      "required": false
+    },
+    {
+      "id": 125575,
+      "name": "Назначение игрушки для животных",
+      "required": false
+    },
+    {
+      "id": 252454,
+      "name": "Вид грызуна",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003169,
+      "name": "Полное наименование товара",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003308,
+      "name": "Тип доставки",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "735": [
+    {
+      "id": 4,
+      "name": "Вид застежки",
+      "required": false
+    },
+    {
+      "id": 12,
+      "name": "Рисунок",
+      "required": false
+    },
+    {
+      "id": 1015,
+      "name": "Материал подкладки",
+      "required": false
+    },
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 18769,
+      "name": "Сезон",
+      "required": false
+    },
+    {
+      "id": 19234,
+      "name": "Размер животного",
+      "required": false
+    },
+    {
+      "id": 54337,
+      "name": "Размер",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 115032,
+      "name": "Пол животного",
+      "required": false
+    },
+    {
+      "id": 125120,
+      "name": "Порода собаки",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177450,
+      "name": "Состав",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 14177456,
+      "name": "Рос. размер",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "874": [
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 85571,
+      "name": "Упаковка",
+      "required": false
+    },
+    {
+      "id": 88953,
+      "name": "Вес с упаковкой (кг)",
+      "required": false
+    },
+    {
+      "id": 89064,
+      "name": "Вес без упаковки (кг)",
+      "required": false
+    },
+    {
+      "id": 90630,
+      "name": "Высота предмета",
+      "required": false
+    },
+    {
+      "id": 90652,
+      "name": "Глубина предмета",
+      "required": false
+    },
+    {
+      "id": 90673,
+      "name": "Ширина предмета",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 125020,
+      "name": "Вид когтеточки",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003169,
+      "name": "Полное наименование товара",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "932": [
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 85571,
+      "name": "Упаковка",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 89008,
+      "name": "Вес товара без упаковки (г)",
+      "required": false
+    },
+    {
+      "id": 90630,
+      "name": "Высота предмета",
+      "required": false
+    },
+    {
+      "id": 90673,
+      "name": "Ширина предмета",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 166017,
+      "name": "Тип пеленок",
+      "required": false
+    },
+    {
+      "id": 248163,
+      "name": "Размер пеленки",
+      "required": false
+    },
+    {
+      "id": 252454,
+      "name": "Вид грызуна",
+      "required": false
+    },
+    {
+      "id": 355559,
+      "name": "Количество в упаковке (шт.)",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177450,
+      "name": "Состав",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003169,
+      "name": "Полное наименование товара",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003308,
+      "name": "Тип доставки",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "941": [
+    {
+      "id": 12,
+      "name": "Рисунок",
+      "required": false
+    },
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 19234,
+      "name": "Размер животного",
+      "required": false
+    },
+    {
+      "id": 85571,
+      "name": "Упаковка",
+      "required": false
+    },
+    {
+      "id": 88953,
+      "name": "Вес с упаковкой (кг)",
+      "required": false
+    },
+    {
+      "id": 90602,
+      "name": "Диаметр предмета",
+      "required": false
+    },
+    {
+      "id": 90673,
+      "name": "Ширина предмета",
+      "required": false
+    },
+    {
+      "id": 90675,
+      "name": "Длина предмета",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 252454,
+      "name": "Вид грызуна",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 407160,
+      "name": "Размер лежака для животных",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "942": [
+    {
+      "id": 12,
+      "name": "Рисунок",
+      "required": false
+    },
+    {
+      "id": 1010,
+      "name": "Утеплитель",
+      "required": false
+    },
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 19234,
+      "name": "Размер животного",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 89008,
+      "name": "Вес товара без упаковки (г)",
+      "required": false
+    },
+    {
+      "id": 90630,
+      "name": "Высота предмета",
+      "required": false
+    },
+    {
+      "id": 90652,
+      "name": "Глубина предмета",
+      "required": false
+    },
+    {
+      "id": 90673,
+      "name": "Ширина предмета",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 252454,
+      "name": "Вид грызуна",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "1007": [
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 19234,
+      "name": "Размер животного",
+      "required": false
+    },
+    {
+      "id": 54337,
+      "name": "Размер",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 125079,
+      "name": "Вид намордника",
+      "required": false
+    },
+    {
+      "id": 125120,
+      "name": "Порода собаки",
+      "required": false
+    },
+    {
+      "id": 125584,
+      "name": "Назначение амуниции для животных",
+      "required": false
+    },
+    {
+      "id": 125780,
+      "name": "Вид застежки намордника",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 14177456,
+      "name": "Рос. размер",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003169,
+      "name": "Полное наименование товара",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003308,
+      "name": "Тип доставки",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "1071": [
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 19234,
+      "name": "Размер животного",
+      "required": false
+    },
+    {
+      "id": 85571,
+      "name": "Упаковка",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 89008,
+      "name": "Вес товара без упаковки (г)",
+      "required": false
+    },
+    {
+      "id": 90630,
+      "name": "Высота предмета",
+      "required": false
+    },
+    {
+      "id": 90652,
+      "name": "Глубина предмета",
+      "required": false
+    },
+    {
+      "id": 90673,
+      "name": "Ширина предмета",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 252454,
+      "name": "Вид грызуна",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003169,
+      "name": "Полное наименование товара",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003308,
+      "name": "Тип доставки",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "1118": [
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 18764,
+      "name": "Жесткость",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 89008,
+      "name": "Вес товара без упаковки (г)",
+      "required": false
+    },
+    {
+      "id": 90630,
+      "name": "Высота предмета",
+      "required": false
+    },
+    {
+      "id": 90652,
+      "name": "Глубина предмета",
+      "required": false
+    },
+    {
+      "id": 90673,
+      "name": "Ширина предмета",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "1121": [
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 83315,
+      "name": "Тип кормушки",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 89008,
+      "name": "Вес товара без упаковки (г)",
+      "required": false
+    },
+    {
+      "id": 89010,
+      "name": "Объем товара",
+      "required": false
+    },
+    {
+      "id": 90630,
+      "name": "Высота предмета",
+      "required": false
+    },
+    {
+      "id": 90652,
+      "name": "Глубина предмета",
+      "required": false
+    },
+    {
+      "id": 90673,
+      "name": "Ширина предмета",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 252454,
+      "name": "Вид грызуна",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "1125": [
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 85079,
+      "name": "Длина кабеля (м)",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 90630,
+      "name": "Высота предмета",
+      "required": false
+    },
+    {
+      "id": 90673,
+      "name": "Ширина предмета",
+      "required": false
+    },
+    {
+      "id": 90675,
+      "name": "Длина предмета",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 125090,
+      "name": "Вид лотка для животных",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "1126": [
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 85571,
+      "name": "Упаковка",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 90630,
+      "name": "Высота предмета",
+      "required": false
+    },
+    {
+      "id": 90652,
+      "name": "Глубина предмета",
+      "required": false
+    },
+    {
+      "id": 90673,
+      "name": "Ширина предмета",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90841,
+      "name": "Вместимость миски (мл)",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 125233,
+      "name": "Вид миски для животных",
+      "required": false
+    },
+    {
+      "id": 252454,
+      "name": "Вид грызуна",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "2911": [
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 16999,
+      "name": "Форма коврика",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 89008,
+      "name": "Вес товара без упаковки (г)",
+      "required": false
+    },
+    {
+      "id": 90673,
+      "name": "Ширина предмета",
+      "required": false
+    },
+    {
+      "id": 90675,
+      "name": "Длина предмета",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 394450,
+      "name": "Размер коврика",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "3235": [
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 63669,
+      "name": "Объем (мл)",
+      "required": false
+    },
+    {
+      "id": 85079,
+      "name": "Длина кабеля (м)",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 89008,
+      "name": "Вес товара без упаковки (г)",
+      "required": false
+    },
+    {
+      "id": 90630,
+      "name": "Высота предмета",
+      "required": false
+    },
+    {
+      "id": 90652,
+      "name": "Глубина предмета",
+      "required": false
+    },
+    {
+      "id": 90673,
+      "name": "Ширина предмета",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 252454,
+      "name": "Вид грызуна",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "3241": [
+    {
+      "id": 12,
+      "name": "Рисунок",
+      "required": false
+    },
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 16999,
+      "name": "Форма коврика",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 89008,
+      "name": "Вес товара без упаковки (г)",
+      "required": false
+    },
+    {
+      "id": 90673,
+      "name": "Ширина предмета",
+      "required": false
+    },
+    {
+      "id": 90675,
+      "name": "Длина предмета",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "3263": [
+    {
+      "id": 12,
+      "name": "Рисунок",
+      "required": false
+    },
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 16999,
+      "name": "Форма коврика",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 19234,
+      "name": "Размер животного",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 89008,
+      "name": "Вес товара без упаковки (г)",
+      "required": false
+    },
+    {
+      "id": 90602,
+      "name": "Диаметр предмета",
+      "required": false
+    },
+    {
+      "id": 90673,
+      "name": "Ширина предмета",
+      "required": false
+    },
+    {
+      "id": 90675,
+      "name": "Длина предмета",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 252454,
+      "name": "Вид грызуна",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 394450,
+      "name": "Размер коврика",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "3318": [
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 19234,
+      "name": "Размер животного",
+      "required": false
+    },
+    {
+      "id": 88953,
+      "name": "Вес с упаковкой (кг)",
+      "required": false
+    },
+    {
+      "id": 90630,
+      "name": "Высота предмета",
+      "required": false
+    },
+    {
+      "id": 90652,
+      "name": "Глубина предмета",
+      "required": false
+    },
+    {
+      "id": 90673,
+      "name": "Ширина предмета",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 252454,
+      "name": "Вид грызуна",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 398630,
+      "name": "Количество секций вольера",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "3480": [
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 85571,
+      "name": "Упаковка",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 89008,
+      "name": "Вес товара без упаковки (г)",
+      "required": false
+    },
+    {
+      "id": 90630,
+      "name": "Высота предмета",
+      "required": false
+    },
+    {
+      "id": 90673,
+      "name": "Ширина предмета",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003195,
+      "name": "Количество зубцов (шт.)",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "4626": [
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 355559,
+      "name": "Количество в упаковке (шт.)",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 402377,
+      "name": "Состав набора для груминга и ухода",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "5799": [
+    {
+      "id": 12,
+      "name": "Рисунок",
+      "required": false
+    },
+    {
+      "id": 13,
+      "name": "Фактура материала",
+      "required": false
+    },
+    {
+      "id": 50,
+      "name": "Декоративные элементы",
+      "required": false
+    },
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 18769,
+      "name": "Сезон",
+      "required": false
+    },
+    {
+      "id": 54337,
+      "name": "Размер",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 90661,
+      "name": "Нагрузка максимальная",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 125120,
+      "name": "Порода собаки",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177450,
+      "name": "Состав",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 14177456,
+      "name": "Рос. размер",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ],
+  "8540": [
+    {
+      "id": 12285,
+      "name": "Вид животного",
+      "required": false
+    },
+    {
+      "id": 17596,
+      "name": "Материал изделия",
+      "required": false
+    },
+    {
+      "id": 19234,
+      "name": "Размер животного",
+      "required": false
+    },
+    {
+      "id": 54337,
+      "name": "Размер",
+      "required": false
+    },
+    {
+      "id": 88952,
+      "name": "Вес товара с упаковкой (г)",
+      "required": false
+    },
+    {
+      "id": 90745,
+      "name": "Ширина упаковки",
+      "required": false
+    },
+    {
+      "id": 90846,
+      "name": "Высота упаковки",
+      "required": false
+    },
+    {
+      "id": 90849,
+      "name": "Длина упаковки",
+      "required": false
+    },
+    {
+      "id": 115027,
+      "name": "Особенности товара для животных",
+      "required": false
+    },
+    {
+      "id": 115032,
+      "name": "Пол животного",
+      "required": false
+    },
+    {
+      "id": 378533,
+      "name": "Комплектация",
+      "required": false
+    },
+    {
+      "id": 14177446,
+      "name": "Бренд",
+      "required": false
+    },
+    {
+      "id": 14177449,
+      "name": "Цвет",
+      "required": false
+    },
+    {
+      "id": 14177451,
+      "name": "Страна производства",
+      "required": false
+    },
+    {
+      "id": 14177452,
+      "name": "Описание",
+      "required": false
+    },
+    {
+      "id": 14177453,
+      "name": "Баркод",
+      "required": false
+    },
+    {
+      "id": 14177456,
+      "name": "Рос. размер",
+      "required": false
+    },
+    {
+      "id": 15000000,
+      "name": "Наименование",
+      "required": false
+    },
+    {
+      "id": 15000001,
+      "name": "ТНВЭД",
+      "required": false
+    },
+    {
+      "id": 15001405,
+      "name": "Ставка НДС",
+      "required": false
+    },
+    {
+      "id": 15001649,
+      "name": "Вид аксессуара для животных",
+      "required": false
+    },
+    {
+      "id": 15001650,
+      "name": "ИКПУ",
+      "required": false
+    },
+    {
+      "id": 15001706,
+      "name": "Код упаковки",
+      "required": false
+    },
+    {
+      "id": 15003293,
+      "name": "Артикул OZON",
+      "required": false
+    },
+    {
+      "id": 15003988,
+      "name": "NTIN",
+      "required": false
+    },
+    {
+      "id": 15004139,
+      "name": "Код ТН ВЭД",
+      "required": false
+    },
+    {
+      "id": 15004292,
+      "name": "ОКПД 2",
+      "required": false
+    },
+    {
+      "id": 15004349,
+      "name": "Дополнительный GTIN",
+      "required": false
+    }
+  ]
+}
